@@ -4,5 +4,5 @@
 # Recipe:: setup
 #
 
-# This installs the play framework
+# This installs the play framework!
 include_recipe "play2::setup"
