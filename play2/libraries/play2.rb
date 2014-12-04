@@ -19,6 +19,7 @@ def default_play_options()
   if node[:play2][:http_port]
     options << "-Dhttp.port=#{node[:play2][:http_port]}"
   end
+
   if node[:play2][:https_port]
     options << "-Dhttps.port=#{node[:play2][:https_port]}"
   end
@@ -29,6 +30,10 @@ def default_play_options()
 
   if node[:play2][:log_conf_file]
     options << "-Dlogger.file=#{node[:play2][:log_conf_file]}"
+  end
+
+  if node[:play2][:config_resource]
+    options << "-Dconfig.resource=#{node[:play2][:config_resource]}"
   end
 
   return options.join(" ")
